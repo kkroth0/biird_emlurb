@@ -2,15 +2,17 @@
 
 ## Visão Geral
 
+Obs: Diante da complexidade do sistema proposto e do tempo disposto para o desenvolvimento, algumas das integrações não estão totalmente aplicadas.
+
 Este projeto é uma POC (Prova de Conceito) para um sistema integrado de monitoramento de descarte ilegal de resíduos em Recife. O sistema utiliza visão computacional para analisar imagens de câmeras, detectar possíveis descartes ilegais, emitir alertas e registrar os eventos em uma blockchain para auditoria imutável.
 
 ## Componentes Principais
 
-- **Módulo de Visão Computacional**: Detecta descartes ilegais em imagens estáticas usando Python e OpenCV.
-- **Backend/API**: Recebe notificações de descarte, registra eventos e fornece APIs para o frontend.
+- **Módulo de Visão Computacional**: Detecta descartes ilegais através de câmeras usando Python e OpenCV (Necessário integração total)
+- **Backend/API**: Recebe notificações de descarte, registra eventos e fornece APIs para o frontend (Necessário integração total)
 - **Frontend Web**: Dashboard interativo com mapa e lista de eventos usando React e Leaflet.js.
-- **Blockchain**: Registro imutável de eventos de descarte implementado em Go.
-- **Sistema de Notificações**: Envia alertas via WhatsApp/Telegram usando WAHA ou Bot API.
+- **Blockchain**: Registro imutável de eventos de descarte implementado em Go (Para testar, verifique o README.MD na pasta /src/blockchain)
+- **Sistema de Notificações**: Envia alertas via WhatsApp/Telegram usando WAHA API (Funcionando via Whatsapp, mas necessário integrar dentro do sistema web)
 
 ## Estrutura do Projeto
 
@@ -29,7 +31,7 @@ emlurb2.0/
 
 ## Como Executar
 
-(Instruções detalhadas de execução serão adicionadas conforme o desenvolvimento avança)
+Para executar corretamente o projeto, siga as etapas presentes no documento de arquitetura: doc-arquitetura.md 
 
 ## Tecnologias Utilizadas
 
@@ -42,6 +44,7 @@ emlurb2.0/
 ## Contribuição
 
 Este projeto foi desenvolvido como parte do Hacker Cidadão 13.0 e visa demonstrar a viabilidade de um sistema de monitoramento de descarte ilegal de resíduos com tecnologias open-source. 
+
 ## Desenvolvedores
 
 <table>
