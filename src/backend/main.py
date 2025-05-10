@@ -16,19 +16,17 @@ from models import WasteDetection, WasteDetectionCreate, WasteDetectionUpdate, C
 from notifications import NotificationService
 from blockchain_client import BlockchainClient
 
-# Configuração de logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger('backend')
 
-# Configurar diretório para salvar imagens
+# Configurar diretório para salvar imagens e garantir que os diretórios existem
 STATIC_DIR = Path(__file__).parent.parent / "data" / "static"
 UPLOADS_DIR = STATIC_DIR / "uploads"
 DETECTIONS_DIR = STATIC_DIR / "detections"
 
-# Garantir que os diretórios existem
 for dir_path in [STATIC_DIR, UPLOADS_DIR, DETECTIONS_DIR]:
     os.makedirs(dir_path, exist_ok=True)
 
@@ -42,7 +40,7 @@ app = FastAPI(
 # Configurar CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Em produção, restringir para origens específicas
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -57,37 +55,31 @@ blockchain_client = BlockchainClient()
 
 @app.on_event("startup")
 async def startup_event():
-    """Executado quando a aplicação é iniciada."""
     logger.info("Inicializando o backend...")
     await database.init_db()
     logger.info("Banco de dados inicializado.")
 
 @app.get("/")
 async def root():
-    """Endpoint raiz para verificar se a API está funcionando."""
     return {"message": "API de Monitoramento de Descarte Ilegal funcionando"}
 
 @app.get("/health")
 async def health_check():
-    """Verificação de saúde da API."""
     return {"status": "ok", "timestamp": datetime.now().isoformat()}
 
 # Endpoints para câmeras
 @app.get("/api/cameras", response_model=List[Camera])
 async def get_cameras():
-    """Obter todas as câmeras cadastradas."""
     cameras = await database.get_all_cameras()
     return cameras
 
 @app.get("/api/cameras/{camera_id}/detections")
 async def get_camera_detections(camera_id: str):
-    """Obter todas as detecções de uma câmera específica."""
     detections = await database.get_camera_detections(camera_id)
     return detections
 
 @app.put("/api/cameras/{camera_id}/status")
 async def update_camera_status(camera_id: str, status: str):
-    """Atualizar o status de uma câmera."""
     if status not in ["Online", "Offline", "Manutenção"]:
         raise HTTPException(status_code=400, detail="Status inválido")
         
