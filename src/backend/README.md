@@ -2,7 +2,7 @@
 
 O backend é construído com FastAPI (Python) e gerencia as detecções de descartes ilegais, integrando-se com a blockchain para registro imutável e enviando notificações via WhatsApp.
 
-Obs: A integração de notificaçãos ainda está em andamento.
+Obs: A integração de notificações ainda está em andamento.
 
 ![image](https://github.com/user-attachments/assets/87342879-da1f-4c02-a199-851cece43feb)
 
