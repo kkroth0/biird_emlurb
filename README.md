@@ -29,7 +29,7 @@ emlurb2.0/
 └── requirements.txt      # Dependências Python
 ```
 ### Observação:
-Devido às limitações de tempo e desenvolvedores disponíveis, algumas integrações ainda não foram totalmente implementadas. Disponibilizamos em um repositório complementar (https://github.com/luizwebnet/biirdrecife) diversos serviços que serão integrados posteriormente à aplicação principal:
+Devido às limitações de tempo e desenvolvedores disponíveis, algumas integrações ainda não foram totalmente implementadas. Disponibilizamos em um repositório complementar (https://github.com/luizwebnet/biirdrecife) diversos serviços que serão integrados posteriormente à aplicação principal.
 
 Para verificar estes outros serviços, consulte https://biird.netlify.app/documentos/
 - Visão Computacional:
