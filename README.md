@@ -1,4 +1,4 @@
-# Sistema de Monitoramento de Descarte Ilegal de Resíduos
+# BiiRD - Base de Inteligência e Inovação do Recife para Descartes
 
 ## Visão Geral
 
