@@ -1,12 +1,12 @@
-# Documentação de Arquitetura: Sistema de Monitoramento de Descarte Ilegal
+# 🦅BiiRD - Documentação de Arquitetura
 
-Este documento descreve a arquitetura técnica do sistema de monitoramento de descarte ilegal de resíduos, desenvolvido como POC/MVP.
+Este documento descreve a arquitetura técnica do BiiRD
 
 ## Visão Geral do Sistema
 
 O sistema é composto por quatro módulos principais:
 
-1. **Módulo de Visão Computacional**: Detecta descartes ilegais em imagens utilizando OpenCV
+1. **Módulo de Visão Computacional**: Detecta descartes ilegais em imagens utilizando OpenCV 
 2. **Backend API**: Recebe, processa e armazena detecções de descartes
 3. **Frontend Web**: Interface para visualização e gestão das detecções
 4. **Blockchain**: Registro imutável dos eventos para auditoria
@@ -22,8 +22,8 @@ O sistema é composto por quatro módulos principais:
                                  │
                                  ▼
                         ┌─────────────────┐      ┌─────────────────┐
-                        │   Blockchain    │      │Notificações     │
-                        │      (Go)       │      │(WhatsApp/Telegr)│
+                        │   Blockchain    │      │  Notificações   │
+                        │      (Go)       │      │   (WhatsApp)    │
                         └─────────────────┘      └─────────────────┘
 ```
 
@@ -34,7 +34,7 @@ O sistema é composto por quatro módulos principais:
 **Tecnologias:** Python, OpenCV
 
 Responsável por:
-- Analisar imagens estáticas que simulam câmeras de vigilância
+- Analisar imagens que simulam câmeras de vigilância
 - Detectar objetos de interesse (possíveis descartes) usando subtração de fundo
 - Reportar detecções ao backend via API REST
 
