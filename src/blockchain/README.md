@@ -65,6 +65,6 @@ curl -X POST http://localhost:8080/mine \
 
 Por padrão, a blockchain é armazenada em `./data/blockchain.json` e é persistida entre reinicializações do serviço.
 
-## Integração com o Backend
+## Integração com o Backend (Em andamento)
 
 Esta blockchain é consumida pelo backend Python através do componente `blockchain_client.py`, que fornece uma interface para registrar eventos e consultar a blockchain. 

@@ -109,7 +109,7 @@ go run main.go
 2. O módulo envia a detecção (imagem + metadados) para o backend via API
 3. O backend armazena a detecção no banco de dados
 4. O backend registra a detecção na blockchain como registro imutável
-5. O backend envia notificações via WhatsApp/Telegram para os fiscais
+5. O backend envia notificações via WhatsApp para os fiscais
 6. O frontend consulta o backend para exibir as detecções no mapa e na tabela
 7. Os fiscais podem atualizar o status das detecções (em atendimento, concluído)
 8. Qualquer atualização de status também é registrada na blockchain
@@ -122,7 +122,7 @@ go run main.go
 - Node.js 14+
 - Go 1.21+
 - SQLite
-- WAHA (WhatsApp HTTP API) ou token do Telegram Bot
+- WAHA (WhatsApp HTTP API)
 
 ### Variáveis de Ambiente
 
@@ -131,8 +131,6 @@ go run main.go
 BLOCKCHAIN_API_URL=http://localhost:8080
 WAHA_URL=http://localhost:3000
 WAHA_TOKEN=your_waha_token
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token
-TELEGRAM_CHAT_ID=your_telegram_chat_id
 DASHBOARD_URL=http://localhost:3000
 ```
 
@@ -144,23 +142,20 @@ REACT_APP_BLOCKCHAIN_URL=http://localhost:8080
 
 ## Segurança e Escalabilidade
 
-Este projeto é um POC/MVP e, portanto, não inclui todas as medidas de segurança necessárias para um ambiente de produção. Para produção, recomenda-se:
+Este projeto é não inclui todas as medidas de segurança necessárias para um ambiente de produção, devido a se tratar de uma POC. 
 
+Para produção, recomenda-se:
 - Implementar autenticação e autorização
 - Utilizar HTTPS para todas as comunicações
 - Considerar bancos de dados mais robustos (PostgreSQL, MongoDB)
-- Implementar controle de acesso baseado em papéis
+- Implementar controle de acesso baseado em papéis 
 - Adicionar testes automatizados
 
 ## Limitações da POC
-
 - A detecção de visão computacional usa técnicas simples para demonstração
 - A blockchain é uma implementação simplificada, não distribuída
-- Não há implementação real de WAHA - exigiria um número de telefone real
-- As imagens são simuladas e não vêm de câmeras reais
 
 ## Próximos Passos
-
 - Integração com câmeras reais ou feeds de vídeo
 - Melhoria nos algoritmos de detecção (uso de modelos de deep learning)
 - Expansão das funcionalidades do dashboard
