@@ -170,7 +170,7 @@ function Navigation({ mobileNav }) {
       <Container maxW="container.xl">
         <Flex justify="space-between" align="center" py={3}>
           <Flex align="center">
-            <Heading size="md" color="teal.500" mr={2}>EMLURB 2.0</Heading>
+            <Heading size="md" color="teal.500" mr={2}>BiiRD 1.0</Heading>
             <Badge colorScheme="green">POC</Badge>
           </Flex>
           
@@ -228,15 +228,15 @@ function Footer() {
         >
           <Box mb={{ base: 4, md: 0 }}>
             <Text fontSize="sm" color="gray.500">
-              © 2023 EMLURB Recife - Monitoramento de Descarte Ilegal
+              © 2025 EMLURB Recife - Base de Inteligência e Inovação do Recife para Descartes
             </Text>
             <Text fontSize="sm" color="gray.500">
-              POC/MVP desenvolvido para demonstração de tecnologia
+              Desenvolvido por @BiiRD
             </Text>
           </Box>
           
           <HStack spacing={4}>
-            <ChakraLink href="https://github.com" isExternal color="gray.500">
+            <ChakraLink href="https://github.com/kkroth0/biird_emlurb" isExternal color="gray.500">
               <Box as={FaGithub} />
             </ChakraLink>
             <ChakraLink href="https://recife.pe.gov.br" isExternal color="gray.500">
