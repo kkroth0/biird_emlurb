@@ -1,5 +1,5 @@
 # Computer Vision
-opencv-python==4.8.0.76
+opencv-python==4.8.1.78
 numpy==2.2.5
 # Backend
 fastapi>=0.100.0  # Fixed the => to >= for proper version specification
