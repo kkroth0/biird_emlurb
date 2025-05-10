@@ -42,7 +42,12 @@ O servidor blockchain estará disponível em [http://localhost:8080](http://loca
 
 Para adicionar um novo bloco:
 
-```bash
+Poweshell (Recomendado)
+```
+Invoke-RestMethod -Uri "http://localhost:8080/mine" -Method Post -Headers @{"Content-Type"="application/json"} -Body '{"data": {"detection_id": "abc123", "camera_id": "camera_01", "timestamp": "2023-01-01T12:00:00Z", "coordinates": {"latitude": -8.0476, "longitude": -34.8770}, "waste_type": "Entulho"}}'
+```
+CMD
+```
 curl -X POST http://localhost:8080/mine \
   -H "Content-Type: application/json" \
   -d '{
