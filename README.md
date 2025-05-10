@@ -1,4 +1,4 @@
-# BiiRD - Base de Inteligência e Inovação do Recife para Descartes
+# 🦅 BiiRD - Base de Inteligência e Inovação do Recife para Descartes
 
 ## Visão Geral
 
