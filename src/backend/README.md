@@ -2,6 +2,8 @@
 
 Este é o backend do sistema, construído com FastAPI (Python) e parcialmente integrado com uma blockchain em Go.
 
+![image](https://github.com/user-attachments/assets/87342879-da1f-4c02-a199-851cece43feb)
+
 ## Configuração do Ambiente
 
 1. Instale as dependências Python:
