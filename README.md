@@ -48,7 +48,7 @@ Processamento de imagens via WhatsApp:
 
 ## Como Executar
 
-Para executar corretamente o projeto, siga as etapas presentes no documento de arquitetura: doc-arquitetura.md 
+Para executar corretamente o projeto, siga as etapas presentes no documento de arquitetura: [doc-arquitetura.md ](https://github.com/kkroth0/biird_emlurb/blob/main/doc-arquitetura.md)
 
 ## Tecnologias Utilizadas
 
