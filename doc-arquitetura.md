@@ -118,7 +118,7 @@ go run main.go
 
 ### Requisitos
 
-- Python 3.13+
+- Python 3.13
 - Node.js 14+
 - Go 1.21+
 - SQLite
