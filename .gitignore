@@ -1,0 +1,99 @@
+# General
+*.log
+*.bak
+*.swp
+*.tmp
+*.env
+.env.local
+.env.*.local
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Go
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.prof
+vendor/
+go.sum
+/tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+*.egg
+wheels/
+pip-wheel-metadata/
+*.whl
+
+# Virtual environments
+venv/
+env/
+pyvenv/
+.venv/
+virtualenv/
+ENV/
+
+# PyInstaller
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+.ipynb_checkpoints/
+
+# JavaScript
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+dist/
+build/
+*.bundle.js
+*.bundle.js.map
+coverage/
+*.lcov
+.webpack/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+.vite/
+*.secret
+*.key
+*.pem
+config.local.js
+config.local.json
+
+# Editor and IDE files
+*.code-workspace
+.history/
+
+# Project-specific temporary files
+tmp/
+temp/
