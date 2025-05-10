@@ -1,4 +1,4 @@
-# Backend do Sistema de Monitoramento de Descarte Ilegal
+# 🦅 BiiRD - Instalação do Backend
 
 Este é o backend do sistema, construído com FastAPI (Python) e integrado com uma blockchain em Go.
 
