@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+# Em andamento
+
 import os
 import time
 import argparse

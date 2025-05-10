@@ -1,3 +1,5 @@
+# Em andamento
+
 import httpx
 import logging
 import os

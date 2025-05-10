@@ -1,4 +1,4 @@
-# 🦅 BiiRD - Instalação do Backend
+# 🦅 BiiRD - Instalação do Backend (Em andamento devido a algumas inconstâncias nas dependências do Python)
 
 Este é o backend do sistema, construído com FastAPI (Python) e parcialmente integrado com uma blockchain em Go.
 
@@ -6,9 +6,10 @@ Este é o backend do sistema, construído com FastAPI (Python) e parcialmente in
 
 ## Configuração do Ambiente
 
-1. Instale as dependências Python:
+1. Instale as dependências Python (Necessário a criação de um .venv):
 
 ```bash
+ cd .\src\backend\
 pip install -r ../../requirements.txt
 ```
 

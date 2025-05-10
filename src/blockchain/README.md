@@ -23,17 +23,28 @@ Este componente implementa uma blockchain simples em Go para registrar detecçõ
 Para executar a blockchain:
 
 ```bash
+
+# Navegar para o diretório da blockchain
+cd src/blockchain
+
 # Baixar dependências
 go mod download
 
 # Compilar e executar
 go run main.go
-```
 
 O servidor blockchain estará disponível em [http://localhost:8080](http://localhost:8080).
 
-## Endpoints da API
+## Estrutura de Arquivos
+```
+src/blockchain/
+│
+├── main.go              # Implementação da blockchain
+├── data/blockchain.json # JSON contendo os dados da blockchain
+└── go.mod               # Dependências do projeto´
 
+
+## Endpoints da API
 - `GET /health` - Verificação de saúde do serviço
 - `GET /chain` - Obtém toda a cadeia de blocos
 - `POST /mine` - Adiciona um novo bloco à chain
@@ -49,7 +60,7 @@ Poweshell (Recomendado)
 ```
 Invoke-RestMethod -Uri "http://localhost:8080/mine" -Method Post -Headers @{"Content-Type"="application/json"} -Body '{"data": {"detection_id": "abc123", "camera_id": "camera_01", "timestamp": "2023-01-01T12:00:00Z", "coordinates": {"latitude": -8.0476, "longitude": -34.8770}, "waste_type": "Entulho"}}'
 ```
-CMD
+CMD ou Terminal
 ```
 curl -X POST http://localhost:8080/mine \
   -H "Content-Type: application/json" \
@@ -71,3 +82,16 @@ Por padrão, a blockchain é armazenada em `./data/blockchain.json` e é persist
 ## Integração com o Backend (Em andamento)
 
 Esta blockchain é consumida pelo backend Python através do componente `blockchain_client.py`, que fornece uma interface para registrar eventos e consultar a blockchain. 
+
+## Limitações da Implementação
+Por ser uma prova de conceito, esta implementação tem algumas limitações:
+
+- Não é distribuída (roda em um único nó)
+- Não implementa mecanismos avançados de consenso
+- Não possui recursos de segurança robustos
+
+Próximos Passos
+- Implementar uma rede P2P para distribuição da blockchain
+- Melhorar o algoritmo de consenso
+- Adicionar criptografia para transações
+- Integrar contratos inteligentes para automação de processos
