@@ -2,8 +2,7 @@
 
 Este é o backend do sistema, construído com FastAPI (Python) e parcialmente integrado com uma blockchain em Go.
 
-![image](https://github.com/user-attachments/assets/155ecf7b-b15f-4a61-9e5f-cb86636e00dd)
-
+![image](https://github.com/user-attachments/assets/87342879-da1f-4c02-a199-851cece43feb)
 
 ## Configuração do Ambiente
 
