@@ -2,6 +2,9 @@
 
 Este componente implementa uma blockchain simples em Go para registrar detecções de descarte ilegal de resíduos de forma imutável e auditável.
 
+![image](https://github.com/user-attachments/assets/51d003f1-8f0b-4881-95ac-447b77c195bb)
+
+
 ## Funcionalidades
 
 - Registro imutável de eventos de detecção
