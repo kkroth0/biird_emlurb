@@ -1,7 +1,6 @@
 # 🦅 BiiRD - Base de Inteligência e Inovação do Recife para Descartes
 
-![image](https://github.com/user-attachments/assets/4df1f727-9e4f-4e9c-908b-6303e52155de)
-
+![image](https://github.com/user-attachments/assets/2f42a8f3-e807-4751-a3b5-52656da4e155)
 
 ## Visão Geral
 
