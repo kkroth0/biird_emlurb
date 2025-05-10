@@ -7,40 +7,20 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
-# Configuração de logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger('waste_detector')
 
-class WasteDetector:
-    """
-    Detector de descartes ilegais usando OpenCV.
-    Usa técnicas simples como subtração de fundo para detectar objetos novos nas imagens.
-    """
-    
+class WasteDetector:    
     def __init__(self, backend_url="http://localhost:8000", threshold=1000):
-        """
-        Inicializa o detector.
-        
-        Args:
-            backend_url: URL da API do backend
-            threshold: Limiar para detecção (área mínima em pixels)
-        """
         self.backend_url = backend_url
         self.threshold = threshold
         self.background_images = {}  # Dicionário para armazenar imagens de fundo por câmera
         logger.info("Detector de descartes ilegais inicializado")
         
     def load_background(self, camera_id, image_path):
-        """
-        Carrega uma imagem de fundo para uma câmera específica.
-        
-        Args:
-            camera_id: ID da câmera
-            image_path: Caminho para a imagem de fundo
-        """
         try:
             background = cv2.imread(image_path)
             if background is None:
@@ -57,16 +37,6 @@ class WasteDetector:
             return False
             
     def detect_waste(self, camera_id, current_image_path):
-        """
-        Detecta possíveis descartes ilegais comparando a imagem atual com a imagem de fundo.
-        
-        Args:
-            camera_id: ID da câmera
-            current_image_path: Caminho para a imagem atual
-            
-        Returns:
-            tuple: (has_waste, image_with_detection, contours_area)
-        """
         # Verificar se temos uma imagem de fundo para esta câmera
         if camera_id not in self.background_images:
             logger.error(f"Imagem de fundo não encontrada para câmera {camera_id}")
@@ -115,23 +85,12 @@ class WasteDetector:
             return False, None, 0
             
     def notify_backend(self, camera_id, image_path, detection_data):
-        """
-        Notifica o backend sobre um possível descarte ilegal.
-        
-        Args:
-            camera_id: ID da câmera
-            image_path: Caminho para a imagem com detecção
-            detection_data: Dados adicionais sobre a detecção
-            
-        Returns:
-            bool: True se a notificação foi bem-sucedida, False caso contrário
-        """
         try:
             # Preparar metadados para envio
             timestamp = datetime.now().isoformat()
             
             # Estes dados seriam obtidos de uma configuração real,
-            # mas para o POC usamos valores fixos
+            # mas para a POC usamos valores fixos
             latitude = -8.0476  # Coordenadas de exemplo para Recife
             longitude = -34.8770
             
@@ -172,17 +131,6 @@ class WasteDetector:
             return False
             
     def process_camera_images(self, camera_id, images_folder, background_index=0):
-        """
-        Processa todas as imagens de uma câmera específica.
-        
-        Args:
-            camera_id: ID da câmera
-            images_folder: Pasta contendo as imagens da câmera
-            background_index: Índice da imagem a ser usada como fundo
-            
-        Returns:
-            int: Número de descartes detectados
-        """
         folder_path = Path(images_folder)
         image_files = sorted([f for f in folder_path.glob("*.jpg") or folder_path.glob("*.png")])
         

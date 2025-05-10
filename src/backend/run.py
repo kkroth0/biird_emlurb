@@ -1,14 +1,8 @@
-#!/usr/bin/env python3
-"""
-Script para iniciar o backend do sistema de monitoramento de descarte ilegal.
-"""
-
 import os
 import logging
 import argparse
 import uvicorn
 
-# Configurar logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -16,7 +10,6 @@ logging.basicConfig(
 logger = logging.getLogger('backend_runner')
 
 def main():
-    # Configurar argumentos de linha de comando
     parser = argparse.ArgumentParser(description='Servidor Backend de Monitoramento de Descarte Ilegal')
     
     parser.add_argument('--host', type=str, default='0.0.0.0',
@@ -33,10 +26,8 @@ def main():
     
     args = parser.parse_args()
     
-    # Configurar ambiente
     os.environ.setdefault('PYTHONPATH', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     
-    # Iniciar servidor
     logger.info(f"Iniciando o servidor backend em {args.host}:{args.port}")
     
     uvicorn.run(

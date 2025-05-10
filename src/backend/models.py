@@ -4,12 +4,10 @@ from datetime import datetime
 import uuid
 
 class Coordinates(BaseModel):
-    """Modelo para coordenadas geográficas."""
     latitude: float
     longitude: float
 
 class WasteDetection(BaseModel):
-    """Modelo para detecção de descarte ilegal."""
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     camera_id: str
     timestamp: datetime
@@ -39,7 +37,6 @@ class WasteDetection(BaseModel):
         }
 
 class WasteDetectionCreate(BaseModel):
-    """Modelo para criação de detecção (sem os campos gerados automaticamente)."""
     camera_id: str
     timestamp: datetime
     coordinates: Coordinates
@@ -47,13 +44,11 @@ class WasteDetectionCreate(BaseModel):
     waste_type: str = "Desconhecido"
 
 class WasteDetectionUpdate(BaseModel):
-    """Modelo para atualização parcial de detecção."""
     status: Optional[str] = None
     waste_type: Optional[str] = None
     blockchain_hash: Optional[str] = None
 
 class Camera(BaseModel):
-    """Modelo para câmeras de monitoramento."""
     id: str
     name: str
     location: str
@@ -62,13 +57,11 @@ class Camera(BaseModel):
     last_detection: Optional[datetime] = None
 
 class NotificationRequest(BaseModel):
-    """Modelo para solicitação de notificação."""
     detection_id: str
     recipients: List[str]
     message: Optional[str] = None
 
 class BlockchainTransaction(BaseModel):
-    """Modelo para transações na blockchain."""
     hash: str
     detection_id: str
     timestamp: datetime

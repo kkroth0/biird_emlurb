@@ -5,14 +5,11 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
-# Diretório para armazenar o banco de dados
 DB_DIR = Path(__file__).parent.parent / "data"
 DB_PATH = DB_DIR / "waste_detection.db"
 
-# Garantir que o diretório de dados existe
 os.makedirs(DB_DIR, exist_ok=True)
 
-# Queries SQL
 CREATE_DETECTIONS_TABLE = """
 CREATE TABLE IF NOT EXISTS detections (
     id TEXT PRIMARY KEY,
@@ -121,16 +118,6 @@ async def init_db():
             await db.commit()
         
 async def add_detection(detection_data: Dict[str, Any], image_url: Optional[str] = None) -> str:
-    """
-    Adiciona uma nova detecção ao banco de dados.
-    
-    Args:
-        detection_data: Dados da detecção
-        image_url: URL da imagem (opcional)
-        
-    Returns:
-        str: ID da detecção
-    """
     detection_id = detection_data.get("id")
     camera_id = detection_data.get("camera_id")
     timestamp = detection_data.get("timestamp")
@@ -158,15 +145,6 @@ async def add_detection(detection_data: Dict[str, Any], image_url: Optional[str]
     return detection_id
 
 async def get_detection(detection_id: str) -> Dict[str, Any]:
-    """
-    Obtém uma detecção pelo ID.
-    
-    Args:
-        detection_id: ID da detecção
-        
-    Returns:
-        Dict: Dados da detecção
-    """
     async with aiosqlite.connect(DB_PATH) as db:
         db.row_factory = aiosqlite.Row
         cursor = await db.execute(GET_DETECTION_BY_ID, (detection_id,))
@@ -181,16 +159,6 @@ async def get_detection(detection_id: str) -> Dict[str, Any]:
         return detection
 
 async def update_detection(detection_id: str, update_data: Dict[str, Any]) -> bool:
-    """
-    Atualiza uma detecção existente.
-    
-    Args:
-        detection_id: ID da detecção
-        update_data: Dados para atualização
-        
-    Returns:
-        bool: True se a atualização foi bem-sucedida
-    """
     status = update_data.get("status")
     waste_type = update_data.get("waste_type")
     blockchain_hash = update_data.get("blockchain_hash")
@@ -205,12 +173,6 @@ async def update_detection(detection_id: str, update_data: Dict[str, Any]) -> bo
         return True
 
 async def get_all_detections() -> List[Dict[str, Any]]:
-    """
-    Obtém todas as detecções.
-    
-    Returns:
-        List[Dict]: Lista de detecções
-    """
     async with aiosqlite.connect(DB_PATH) as db:
         db.row_factory = aiosqlite.Row
         cursor = await db.execute(GET_ALL_DETECTIONS)
@@ -225,15 +187,6 @@ async def get_all_detections() -> List[Dict[str, Any]]:
         return detections
 
 async def get_camera_detections(camera_id: str) -> List[Dict[str, Any]]:
-    """
-    Obtém todas as detecções de uma câmera específica.
-    
-    Args:
-        camera_id: ID da câmera
-        
-    Returns:
-        List[Dict]: Lista de detecções
-    """
     async with aiosqlite.connect(DB_PATH) as db:
         db.row_factory = aiosqlite.Row
         cursor = await db.execute(GET_DETECTIONS_BY_CAMERA, (camera_id,))
@@ -248,12 +201,6 @@ async def get_camera_detections(camera_id: str) -> List[Dict[str, Any]]:
         return detections
 
 async def get_all_cameras() -> List[Dict[str, Any]]:
-    """
-    Obtém todas as câmeras.
-    
-    Returns:
-        List[Dict]: Lista de câmeras
-    """
     async with aiosqlite.connect(DB_PATH) as db:
         db.row_factory = aiosqlite.Row
         cursor = await db.execute(GET_ALL_CAMERAS)
@@ -268,16 +215,6 @@ async def get_all_cameras() -> List[Dict[str, Any]]:
         return cameras
 
 async def update_camera_status(camera_id: str, status: str) -> bool:
-    """
-    Atualiza o status de uma câmera.
-    
-    Args:
-        camera_id: ID da câmera
-        status: Novo status
-        
-    Returns:
-        bool: True se a atualização foi bem-sucedida
-    """
     async with aiosqlite.connect(DB_PATH) as db:
         await db.execute(UPDATE_CAMERA_STATUS, (status, camera_id))
         await db.commit()

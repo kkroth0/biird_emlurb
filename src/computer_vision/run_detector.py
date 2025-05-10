@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""
-Script para executar o detector de descartes ilegais.
-Este script simula a obtenção periódica de imagens de câmeras e a detecção
-de possíveis descartes ilegais.
-"""
-
 import os
 import time
 import argparse
@@ -12,7 +6,7 @@ import logging
 from pathlib import Path
 from detector import WasteDetector
 
-# Configuração de logging
+# Configurxação de logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -20,7 +14,6 @@ logging.basicConfig(
 logger = logging.getLogger('waste_detector_runner')
 
 def parse_arguments():
-    """Parse command line arguments."""
     parser = argparse.ArgumentParser(description='Detector de Descartes Ilegais')
     
     parser.add_argument(
@@ -54,7 +47,6 @@ def parse_arguments():
     return parser.parse_args()
 
 def main():
-    """Função principal."""
     args = parse_arguments()
     
     # Criar o detector
