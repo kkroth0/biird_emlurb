@@ -1,4 +1,4 @@
-# Blockchain para Registro Imutável de Descarte Ilegal
+# 🦅BiiRD - Instalação da Blockchain 
 
 Este componente implementa uma blockchain simples em Go para registrar detecções de descarte ilegal de resíduos de forma imutável e auditável.
 
