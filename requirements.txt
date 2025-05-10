@@ -6,7 +6,7 @@ fastapi>=0.100.0  # Fixed the => to >= for proper version specification
 uvicorn==0.23.2
 pydantic>=2.0.0   # Versão necessária para rodar com o Python 3.13
 requests==2.31.0
-python-multipart==0.0.6
+python-multipart==0.0.18
 # Database
 sqlalchemy==2.0.19
 aiosqlite==0.19.0
