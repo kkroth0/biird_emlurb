@@ -4,8 +4,6 @@
 
 ## Visão Geral
 
-Obs: Diante da complexidade do sistema proposto e do tempo disposto para o desenvolvimento, algumas das integrações não estão totalmente aplicadas.
-
 Este projeto é uma POC (Prova de Conceito) para um sistema integrado de monitoramento de descarte ilegal de resíduos em Recife. O sistema utiliza visão computacional para analisar imagens de câmeras, detectar possíveis descartes ilegais, emitir alertas e registrar os eventos em uma blockchain para auditoria imutável.
 
 ## Componentes Principais
@@ -30,6 +28,23 @@ emlurb2.0/
 ├── README.md
 └── requirements.txt      # Dependências Python
 ```
+### Observação:
+Devido à complexidade do sistema proposto e às limitações de tempo para o desenvolvimento, algumas integrações ainda não foram totalmente implementadas. Disponibilizamos em um repositório complementar (https://github.com/luizwebnet/biirdrecife) diversos serviços que serão integrados posteriormente à aplicação principal:
+
+Para verificar estes outros serviços, consulte https://biird.netlify.app/documentos/
+- Visão Computacional:
+    - Módulo de transmissão: https://biird.netlify.app/transmissao/
+    - Módulo de recepção: https://biird.netlify.app/recepcao/
+
+Sistema de alertas e conformidade legal:
+- Envio de alertas pelo agente operacional
+- Adequação com a legislação vigente via RAG (em andamento)
+    - Acesso: https://biird.netlify.app/operacao/
+
+Processamento de imagens via WhatsApp:
+- Envio de imagens pelo usuário final
+- Análise automática por Inteligência Artificial
+- Instruções detalhadas: Consulte a aba "3 - Cidadão" 
 
 ## Como Executar
 
